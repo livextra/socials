@@ -44,9 +44,10 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  opacity: 0.92;
   background:
-    radial-gradient(circle at center, transparent 52%, rgba(0, 0, 0, 0.35) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.03));
+    radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.46) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 14%, transparent 84%, rgba(255, 255, 255, 0.04));
 }
 
 body::after {
@@ -55,13 +56,13 @@ body::after {
   inset: -12%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.3;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04), transparent 18%),
-    radial-gradient(circle at 78% 28%, rgba(255, 93, 143, 0.08), transparent 22%),
-    radial-gradient(circle at 52% 78%, rgba(119, 200, 255, 0.06), transparent 24%);
-  filter: blur(34px);
-  animation: crtBloom 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.06), transparent 18%),
+    radial-gradient(circle at 78% 28%, rgba(255, 93, 143, 0.12), transparent 22%),
+    radial-gradient(circle at 52% 78%, rgba(119, 200, 255, 0.09), transparent 24%);
+  filter: blur(30px);
+  animation: crtBloom 9s ease-in-out infinite alternate;
 }
 
 img,
@@ -98,10 +99,13 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.07;
+  opacity: 0.18;
   background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.04), transparent 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 24%, transparent 76%, rgba(255, 255, 255, 0.02));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 12%, transparent 88%, rgba(255, 255, 255, 0.04)),
+    linear-gradient(90deg, rgba(255, 0, 76, 0.025), transparent 18%, transparent 82%, rgba(0, 174, 255, 0.025)),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 42%);
+  mix-blend-mode: screen;
+  animation: crtRoll 14s linear infinite;
 }
 
 .site-shell::after {
@@ -110,12 +114,12 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.22;
+  opacity: 0.34;
   background:
-    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 3px),
-    linear-gradient(90deg, rgba(255, 90, 143, 0.035), transparent 24%, transparent 76%, rgba(119, 200, 255, 0.035));
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 3px),
+    linear-gradient(90deg, rgba(255, 90, 143, 0.045), transparent 24%, transparent 76%, rgba(119, 200, 255, 0.045));
   mix-blend-mode: screen;
-  animation: crtDrift 14s linear infinite, crtFlicker 0.2s steps(3, end) infinite;
+  animation: crtDrift 10s linear infinite, crtFlicker 0.16s steps(3, end) infinite;
 }
 
 #site-intro {
@@ -265,8 +269,10 @@ button {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
-  opacity: 0.24;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.025));
+  opacity: 0.32;
 }
 
 .hero-video-missing .hero-media-layer {
@@ -788,6 +794,11 @@ button {
 @keyframes crtDrift {
   0% { transform: translateY(0); }
   100% { transform: translateY(18px); }
+}
+
+@keyframes crtRoll {
+  0% { transform: translateY(-4%); }
+  100% { transform: translateY(4%); }
 }
 
 @keyframes crtBloom {
