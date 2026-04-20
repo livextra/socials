@@ -4,14 +4,14 @@
   <meta charset="utf-8"/>
   <title>LIVEXTRA | Creator + Clothing Brand</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="LIVEXTRA official site. Digital creator visuals, music rollouts, and clothing brand energy in one cinematic experience."/>
+  <meta name="description" content="LIVEXTRA official site. Visual rollouts, creator drops, and motion-driven streetwear energy in one clean Y2K experience."/>
   <meta property="og:title" content="LIVEXTRA"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:description" content="Digital creator visuals, music rollouts, and clothing brand energy in one cinematic experience."/>
+  <meta property="og:description" content="Visual rollouts, creator drops, and motion-driven streetwear energy in one clean Y2K experience."/>
   <meta property="og:image" content="3d logo.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="LIVEXTRA"/>
-  <meta name="twitter:description" content="Digital creator visuals, music rollouts, and clothing brand energy in one cinematic experience."/>
+  <meta name="twitter:description" content="Visual rollouts, creator drops, and motion-driven streetwear energy in one clean Y2K experience."/>
   <meta name="twitter:image" content="3d logo.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="3d logo.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="3d logo.png"/>
@@ -25,18 +25,20 @@
     <div class="intro-noise"></div>
     <div class="intro-grid"></div>
     <div class="intro-copy">
-      <p class="intro-kicker">LIVEXTRA STUDIOS PRESENTS</p>
+      <p class="intro-kicker">LIVEXTRA TRANSMISSION</p>
       <h1 class="intro-title" id="intro-title">TONIGHT</h1>
-      <p class="intro-subtitle" id="intro-subtitle">House lights down. Visuals up.</p>
+      <p class="intro-subtitle" id="intro-subtitle">System booting into after-hours mode.</p>
     </div>
   </div>
 
-  <header class="topbar">
+  <header class="topbar" id="topbar">
     <a class="topbar-brand" href="#top">LIVEXTRA</a>
-    <nav class="topbar-nav">
-      <a href="#visuals">Visuals</a>
-      <a href="#brand">Brand</a>
-      <a href="#socials">Socials</a>
+    <nav class="topbar-nav" aria-label="Primary">
+      <a href="#top" data-nav-link>Home</a>
+      <a href="#visuals" data-nav-link>Visuals</a>
+      <a href="#drops" data-nav-link>Drops</a>
+      <a href="#feed" data-nav-link>Feed</a>
+      <a href="#socials" data-nav-link>Socials</a>
     </nav>
   </header>
 
@@ -49,22 +51,54 @@
         <div class="hero-media-overlay"></div>
       </div>
 
-      <div class="hero-content">
-        <div class="hero-logo-stage" id="hero-logo-stage" aria-label="LIVEXTRA spinning logo">
-          <div class="hero-logo-spin" id="hero-logo-spin">
-            <img src="3d logo.png" alt="LIVEXTRA logo" class="hero-logo hero-logo-asset hero-logo-front"/>
-            <img src="3d logo.png" alt="" aria-hidden="true" class="hero-logo hero-logo-asset hero-logo-back"/>
+      <div class="hero-grid">
+        <div class="hero-copy-column">
+          <p class="hero-kicker">Y2K broadcast / visual rollout / live motion</p>
+          <h1 class="hero-title">Clean rollout energy for music, motion, and every next drop.</h1>
+          <p class="hero-text">
+            LIVEXTRA runs like a full creator system: live visuals, rotating releases, cinematic edits, and a smoother dark Y2K world
+            that stays clean while everything moves.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-action hero-action-primary" href="#visuals">Watch visuals</a>
+            <button class="hero-action hero-action-secondary" id="hero-play-latest" type="button">Play latest</button>
+          </div>
+          <div class="hero-scene-note">
+            <span>new music coming</span>
+            <span>new drop loading</span>
+            <span>visuals on repeat</span>
           </div>
         </div>
-        <h1 class="hero-title">Dark visuals, glitch romance, and late-night fashion energy.</h1>
-        <p class="hero-text">
-          LIVEXTRA lives in the space between scene-era internet energy, blackout visuals, and clean streetwear attitude.
-          Everything is built to feel loud, emotional, and cinematic without losing the edge.
-        </p>
-        <div class="hero-scene-note">
-          <span>new music coming</span>
-          <span>new drop loading</span>
-          <span>visuals on repeat</span>
+
+        <div class="hero-side-column">
+          <div class="hero-logo-stage" id="hero-logo-stage" aria-label="LIVEXTRA spinning logo">
+            <div class="hero-logo-spin" id="hero-logo-spin">
+              <img src="3d logo.png" alt="LIVEXTRA logo" class="hero-logo hero-logo-asset hero-logo-front"/>
+              <img src="3d logo.png" alt="" aria-hidden="true" class="hero-logo hero-logo-asset hero-logo-back"/>
+            </div>
+          </div>
+
+          <div class="hero-status-panel section-glass">
+            <div class="hero-status-head">
+              <p class="section-index">live status</p>
+              <strong id="hero-track-title">Jace Davey - ON MY MIND</strong>
+              <span id="hero-track-meta">Studio queue active</span>
+            </div>
+            <div class="hero-status-grid">
+              <article>
+                <span>studio clock</span>
+                <strong id="live-time">00:00:00</strong>
+              </article>
+              <article>
+                <span>next drop window</span>
+                <strong id="countdown-value">00d 00h 00m</strong>
+              </article>
+              <article>
+                <span>release queue</span>
+                <strong id="queue-count">05 tracks</strong>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -75,7 +109,7 @@
     </section>
 
     <section class="signal-strip" aria-label="LIVEXTRA signal strip">
-      <div class="signal-strip-track">
+      <div class="signal-strip-track" id="signal-strip-track">
         <span>new music coming!</span>
         <span>//</span>
         <span>new drop loading!</span>
@@ -98,12 +132,70 @@
       </div>
     </section>
 
+    <section class="content-section reveal" id="drops">
+      <div class="section-shell section-shell-wide">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p class="section-index">01 / DROP DESK</p>
+            <h2>Everything running in one place.</h2>
+          </div>
+          <p>
+            Real-time queue, current track spotlight, quick access cards, and a cleaner release surface so the page feels like a living drop desk instead of a dead landing page.
+          </p>
+        </div>
+
+        <div class="drop-desk-grid">
+          <article class="drop-spotlight section-glass" id="drop-spotlight">
+            <div class="drop-spotlight-media">
+              <img id="spotlight-art" src="https://i.ytimg.com/vi/0y-Sa2kdlL4/hqdefault.jpg" alt="Current spotlight art"/>
+            </div>
+            <div class="drop-spotlight-copy">
+              <p class="section-index">selected release</p>
+              <h3 id="spotlight-title">Jace Davey - ON MY MIND</h3>
+              <p id="spotlight-description">A dark, late-night rollout record built to sit right in the center of the LIVEXTRA world.</p>
+              <div class="drop-spotlight-meta">
+                <span id="spotlight-tag">visual single</span>
+                <span id="spotlight-era">night system</span>
+                <span id="spotlight-runtime">02:44 runtime</span>
+              </div>
+              <div class="drop-spotlight-actions">
+                <button class="hero-action hero-action-primary" id="spotlight-play" type="button">Play in player</button>
+                <a class="hero-action hero-action-secondary" id="spotlight-watch" href="https://www.youtube.com/watch?v=0y-Sa2kdlL4" target="_blank" rel="noopener">Watch on YouTube</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="drop-side-stack">
+            <section class="data-panel section-glass">
+              <div class="data-panel-head">
+                <p class="section-index">queue pulse</p>
+                <strong>Live release stack</strong>
+              </div>
+              <div class="queue-list" id="queue-list"></div>
+            </section>
+
+            <section class="data-panel section-glass">
+              <div class="data-panel-head">
+                <p class="section-index">system notes</p>
+                <strong>Broadcast focus</strong>
+              </div>
+              <div class="mini-note-grid" id="mini-note-grid"></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="content-section reveal" id="visuals">
-      <div class="section-shell">
-        <div class="section-heading">
-          <p class="section-index">01 / VISUALS</p>
-          <h2>Featured Videos</h2>
-          <p>Cuts from the LIVEXTRA world. Fast, damaged, glossy, and built like scene-era internet memories running through modern rollout visuals.</p>
+      <div class="section-shell section-shell-wide">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p class="section-index">02 / VISUALS</p>
+            <h2>Featured visuals and a full track rail.</h2>
+          </div>
+          <p>
+            The main videos stay front and center, while the full release deck underneath lets people jump straight into tracks, see tags, and move the player without leaving the page.
+          </p>
         </div>
 
         <div class="video-grid">
@@ -129,81 +221,85 @@
           </div>
         </div>
 
-        <div class="release-grid">
-          <a class="release-card" href="https://www.youtube.com/watch?v=cpQhU43mFzE" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/cpQhU43mFzE/hqdefault.jpg" alt="ACAI ANTHEM thumbnail"/>
-            <div>
-              <p class="release-label">Release</p>
-              <h3>ACAI ANTHEM</h3>
-            </div>
-          </a>
-          <a class="release-card" href="https://www.youtube.com/watch?v=1VWs0vHmXvs" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/1VWs0vHmXvs/hqdefault.jpg" alt="DIVIDENDS thumbnail"/>
-            <div>
-              <p class="release-label">Studio visual</p>
-              <h3>DIVIDENDS</h3>
-            </div>
-          </a>
-          <a class="release-card" href="https://www.youtube.com/watch?v=BXqvX-t6tuQ" target="_blank" rel="noopener">
-            <img src="https://i.ytimg.com/vi/BXqvX-t6tuQ/hqdefault.jpg" alt="NOFAVORS thumbnail"/>
-            <div>
-              <p class="release-label">Featured drop</p>
-              <h3>NOFAVORS</h3>
-            </div>
-          </a>
-        </div>
+        <div class="track-deck" id="track-deck"></div>
       </div>
     </section>
 
-    <section class="content-section reveal" id="brand">
-      <div class="section-shell">
-        <div class="section-heading">
-          <p class="section-index">02 / BRAND</p>
-          <h2>The LIVEXTRA World</h2>
-          <p>LIVEXTRA sits between fashion label, creator universe, and music-led visual culture with a darker, more emotional edge.</p>
+    <section class="content-section reveal" id="feed">
+      <div class="section-shell section-shell-wide">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p class="section-index">03 / FEED</p>
+            <h2>Motion feed, release board, and rollout notes.</h2>
+          </div>
+          <p>
+            This section keeps the site moving with update cards, release snapshots, and scene notes generated through the same data layer driving the player and spotlight.
+          </p>
         </div>
 
-        <div class="brand-grid">
-          <article class="info-card">
-            <h3>After-dark energy</h3>
-            <p>Everything feels nocturnal, charged, and slightly dangerous. More parking-lot flash photo than polished campaign.</p>
-          </article>
-          <article class="info-card">
-            <h3>Visual-first presence</h3>
-            <p>The brand hits through motion first: edits, reels, shorts, clips, and fragments that land before anybody asks questions.</p>
-          </article>
-          <article class="info-card">
-            <h3>Streetwear attitude</h3>
-            <p>Clean silhouettes, hard graphics, and logo-led pieces built to feel like uniform, not merch.</p>
-          </article>
-          <article class="info-card">
-            <h3>Creator-led motion</h3>
-            <p>LIVEXTRA moves like a living project. New visuals, new sounds, and new pieces keep feeding the same world instead of splitting it apart.</p>
-          </article>
+        <div class="feed-layout">
+          <div class="feed-grid" id="feed-grid"></div>
+          <div class="feed-rail">
+            <section class="section-glass feed-column-card">
+              <div class="data-panel-head">
+                <p class="section-index">release board</p>
+                <strong>Tap a card to move the player</strong>
+              </div>
+              <div class="release-grid release-grid-rail" id="release-grid"></div>
+            </section>
+
+            <section class="section-glass feed-column-card">
+              <div class="data-panel-head">
+                <p class="section-index">scene notes</p>
+                <strong>Built for cleaner scrolling</strong>
+              </div>
+              <div class="scene-board">
+                <article>
+                  <span>motion</span>
+                  <strong>Every section reveals with softer timing so the page feels smoother and less abrupt.</strong>
+                </article>
+                <article>
+                  <span>player</span>
+                  <strong>The audio player, spotlight, queue, and track deck all stay synced together.</strong>
+                </article>
+                <article>
+                  <span>visual system</span>
+                  <strong>CRT overlays, chrome glass, and cleaner spacing keep the page atmospheric without turning messy.</strong>
+                </article>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="content-section reveal" id="socials">
-      <div class="section-shell">
-        <div class="section-heading">
-          <p class="section-index">03 / SOCIALS</p>
-          <h2>Tap In Everywhere</h2>
-          <p>Follow the world as it moves across drops, edits, previews, and new releases.</p>
+      <div class="section-shell section-shell-wide">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p class="section-index">04 / SOCIALS</p>
+            <h2>Tap in everywhere the rollout moves.</h2>
+          </div>
+          <p>
+            Follow the project across edits, reels, clips, and releases. The site stays focused, but the full world keeps moving across every platform.
+          </p>
         </div>
 
-        <div class="social-grid">
-          <a class="social-card" href="https://www.instagram.com/livextra/" target="_blank" rel="noopener">
+        <div class="social-grid social-grid-wide">
+          <a class="social-card social-card-feature" href="https://www.instagram.com/livextra/" target="_blank" rel="noopener">
             <span>Instagram</span>
             <strong>@livextra</strong>
+            <p>Primary visual home for reels, previews, and drop energy.</p>
           </a>
-          <a class="social-card" href="https://www.tiktok.com/@livextrastudios?_r=1&_t=ZT-95ahdReHvYM" target="_blank" rel="noopener">
+          <a class="social-card social-card-feature" href="https://www.tiktok.com/@livextrastudios?_r=1&_t=ZT-95ahdReHvYM" target="_blank" rel="noopener">
             <span>TikTok</span>
             <strong>@livextrastudios</strong>
+            <p>Fast clips, rough cuts, motion tests, and late-night rollouts.</p>
           </a>
-          <a class="social-card" href="https://youtube.com/@jacedaveyyt?si=tF0dU915mt1TgQrS" target="_blank" rel="noopener">
+          <a class="social-card social-card-feature" href="https://youtube.com/@jacedaveyyt?si=tF0dU915mt1TgQrS" target="_blank" rel="noopener">
             <span>YouTube</span>
             <strong>@jacedaveyyt</strong>
+            <p>Music drops, featured visuals, and the longer-form release archive.</p>
           </a>
         </div>
       </div>
@@ -211,7 +307,10 @@
   </main>
 
   <footer class="site-footer" id="footer">
-    <p>LIVEXTRA</p>
+    <div class="footer-grid">
+      <p>LIVEXTRA</p>
+      <p id="footer-status">Broadcast locked.</p>
+    </div>
   </footer>
 
   <aside class="audio-player" id="audio-player">
@@ -247,6 +346,11 @@
         </div>
       </div>
 
+      <label class="audio-volume" for="player-volume">
+        <span>VOL</span>
+        <input id="player-volume" type="range" min="0" max="100" value="70"/>
+      </label>
+
       <a id="mini-watch-link" class="audio-player-watch" href="https://www.youtube.com/watch?v=0y-Sa2kdlL4" target="_blank" rel="noopener">Watch</a>
     </div>
   </aside>
@@ -255,4 +359,3 @@
   <script src="scripts.js"></script>
 </body>
 </html>
-
