@@ -37,7 +37,6 @@
       <a href="#top" data-nav-link>Home</a>
       <a href="#visuals" data-nav-link>Visuals</a>
       <a href="#drops" data-nav-link>Drops</a>
-      <a href="#feed" data-nav-link>Feed</a>
       <a href="#socials" data-nav-link>Socials</a>
     </nav>
   </header>
@@ -53,11 +52,10 @@
 
       <div class="hero-grid">
         <div class="hero-copy-column">
-          <p class="hero-kicker">Y2K broadcast / visual rollout / live motion</p>
-          <h1 class="hero-title">Clean rollout energy for music, motion, and every next drop.</h1>
+          <p class="hero-kicker">late-night visuals / new drops / you already know</p>
+          <h1 class="hero-title">You made it this far. Stay for the next cut.</h1>
           <p class="hero-text">
-            LIVEXTRA runs like a full creator system: live visuals, rotating releases, cinematic edits, and a smoother dark Y2K world
-            that stays clean while everything moves.
+            Turn the volume up, run the visuals, and ride whatever drops next. Nothing here is for tourists. You are in the world now.
           </p>
           <div class="hero-actions">
             <a class="hero-action hero-action-primary" href="#visuals">Watch visuals</a>
@@ -75,28 +73,6 @@
             <div class="hero-logo-spin" id="hero-logo-spin">
               <img src="3d logo.png" alt="LIVEXTRA logo" class="hero-logo hero-logo-asset hero-logo-front"/>
               <img src="3d logo.png" alt="" aria-hidden="true" class="hero-logo hero-logo-asset hero-logo-back"/>
-            </div>
-          </div>
-
-          <div class="hero-status-panel section-glass">
-            <div class="hero-status-head">
-              <p class="section-index">live status</p>
-              <strong id="hero-track-title">Jace Davey - ON MY MIND</strong>
-              <span id="hero-track-meta">Studio queue active</span>
-            </div>
-            <div class="hero-status-grid">
-              <article>
-                <span>studio clock</span>
-                <strong id="live-time">00:00:00</strong>
-              </article>
-              <article>
-                <span>next drop window</span>
-                <strong id="countdown-value">00d 00h 00m</strong>
-              </article>
-              <article>
-                <span>release queue</span>
-                <strong id="queue-count">05 tracks</strong>
-              </article>
             </div>
           </div>
         </div>
@@ -193,9 +169,7 @@
             <p class="section-index">02 / VISUALS</p>
             <h2>Featured visuals and a full track rail.</h2>
           </div>
-          <p>
-            The main videos stay front and center, while the full release deck underneath lets people jump straight into tracks, see tags, and move the player without leaving the page.
-          </p>
+          <p>Hit play on whatever you want. The row under the embeds is the same three cuts you already had.</p>
         </div>
 
         <div class="video-grid">
@@ -204,7 +178,7 @@
               src="https://www.youtube.com/embed/0y-Sa2kdlL4"
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen>
             </iframe>
@@ -214,62 +188,38 @@
               src="https://www.youtube.com/embed/CEVk6cj4Wuk"
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen>
             </iframe>
           </div>
         </div>
 
+        <div class="release-grid release-grid-visuals">
+          <a class="release-card" href="https://www.youtube.com/watch?v=cpQhU43mFzE" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/cpQhU43mFzE/hqdefault.jpg" alt="ACAI ANTHEM thumbnail"/>
+            <div>
+              <p class="release-label">Release</p>
+              <h3>ACAI ANTHEM</h3>
+            </div>
+          </a>
+          <a class="release-card" href="https://www.youtube.com/watch?v=1VWs0vHmXvs" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/1VWs0vHmXvs/hqdefault.jpg" alt="DIVIDENDS thumbnail"/>
+            <div>
+              <p class="release-label">Studio visual</p>
+              <h3>DIVIDENDS</h3>
+            </div>
+          </a>
+          <a class="release-card" href="https://www.youtube.com/watch?v=BXqvX-t6tuQ" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/BXqvX-t6tuQ/hqdefault.jpg" alt="NOFAVORS thumbnail"/>
+            <div>
+              <p class="release-label">Featured drop</p>
+              <h3>NOFAVORS</h3>
+            </div>
+          </a>
+        </div>
+
         <div class="track-deck" id="track-deck"></div>
-      </div>
-    </section>
-
-    <section class="content-section reveal" id="feed">
-      <div class="section-shell section-shell-wide">
-        <div class="section-heading section-heading-split">
-          <div>
-            <p class="section-index">03 / FEED</p>
-            <h2>Motion feed, release board, and rollout notes.</h2>
-          </div>
-          <p>
-            This section keeps the site moving with update cards, release snapshots, and scene notes generated through the same data layer driving the player and spotlight.
-          </p>
-        </div>
-
-        <div class="feed-layout">
-          <div class="feed-grid" id="feed-grid"></div>
-          <div class="feed-rail">
-            <section class="section-glass feed-column-card">
-              <div class="data-panel-head">
-                <p class="section-index">release board</p>
-                <strong>Tap a card to move the player</strong>
-              </div>
-              <div class="release-grid release-grid-rail" id="release-grid"></div>
-            </section>
-
-            <section class="section-glass feed-column-card">
-              <div class="data-panel-head">
-                <p class="section-index">scene notes</p>
-                <strong>Built for cleaner scrolling</strong>
-              </div>
-              <div class="scene-board">
-                <article>
-                  <span>motion</span>
-                  <strong>Every section reveals with softer timing so the page feels smoother and less abrupt.</strong>
-                </article>
-                <article>
-                  <span>player</span>
-                  <strong>The audio player, spotlight, queue, and track deck all stay synced together.</strong>
-                </article>
-                <article>
-                  <span>visual system</span>
-                  <strong>CRT overlays, chrome glass, and cleaner spacing keep the page atmospheric without turning messy.</strong>
-                </article>
-              </div>
-            </section>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -277,7 +227,7 @@
       <div class="section-shell section-shell-wide">
         <div class="section-heading section-heading-split">
           <div>
-            <p class="section-index">04 / SOCIALS</p>
+            <p class="section-index">03 / SOCIALS</p>
             <h2>Tap in everywhere the rollout moves.</h2>
           </div>
           <p>
