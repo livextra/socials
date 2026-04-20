@@ -122,10 +122,10 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.48;
+  opacity: 0.55;
   background:
-    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 3px),
-    linear-gradient(90deg, rgba(255, 106, 156, 0.07), transparent 22%, transparent 78%, rgba(127, 207, 255, 0.07));
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.14) 1px, transparent 1px, transparent 3px),
+    linear-gradient(90deg, rgba(255, 106, 156, 0.1), transparent 20%, transparent 80%, rgba(127, 207, 255, 0.1));
   mix-blend-mode: screen;
   animation: crtDrift 10s linear infinite, crtFlicker 0.16s steps(3, end) infinite;
 }
@@ -135,11 +135,33 @@ button {
 }
 
 .site-shell > main,
-.site-shell > header,
-.site-shell > footer,
+.site-shell > footer {
+  position: relative;
+  z-index: 0;
+}
+
+.site-shell > header {
+  position: relative;
+  z-index: 45;
+}
+
 .site-shell > aside {
   position: relative;
-  z-index: 1;
+  z-index: 70;
+}
+
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  pointer-events: none;
+  opacity: 0.72;
+  background:
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.14) 1px, transparent 1px, transparent 3px),
+    linear-gradient(90deg, rgba(255, 60, 120, 0.09), transparent 18%, transparent 82%, rgba(80, 200, 255, 0.09)),
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.22) 100%);
+  mix-blend-mode: overlay;
+  animation: crtDrift 8s linear infinite, crtFlicker 0.14s steps(2, end) infinite;
 }
 
 #site-intro {
@@ -230,7 +252,7 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
+  z-index: 45;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -678,6 +700,10 @@ button {
   grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr);
 }
 
+.drop-desk-grid-single {
+  grid-template-columns: 1fr;
+}
+
 .drop-spotlight {
   display: grid;
   grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
@@ -865,7 +891,7 @@ button {
 }
 
 .release-grid-visuals {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 1.1rem;
 }
 
@@ -1020,7 +1046,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 60;
+  z-index: 80;
 }
 
 .audio-player-inner {
@@ -1247,8 +1273,7 @@ button {
 
   .track-deck,
   .video-grid,
-  .feed-grid,
-  .release-grid-visuals {
+  .feed-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1281,6 +1306,10 @@ button {
 }
 
 @media (max-width: 700px) {
+  .release-grid-visuals {
+    grid-template-columns: 1fr;
+  }
+
   .hero-section,
   .content-section,
   .site-footer {
