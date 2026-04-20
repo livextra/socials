@@ -146,7 +146,6 @@ button {
 }
 
 .site-shell > aside {
-  position: relative;
   z-index: 21000;
 }
 
