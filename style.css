@@ -1,16 +1,16 @@
-﻿:root {
+:root {
   --bg: #040404;
   --bg-2: #0a0a0b;
-  --panel: rgba(255, 255, 255, 0.045);
-  --panel-strong: rgba(255, 255, 255, 0.08);
-  --line: rgba(255, 255, 255, 0.12);
-  --line-strong: rgba(255, 255, 255, 0.28);
+  --panel: rgba(255, 255, 255, 0.055);
+  --panel-strong: rgba(255, 255, 255, 0.1);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-strong: rgba(255, 255, 255, 0.3);
   --text: #f8f5f1;
   --muted: rgba(248, 245, 241, 0.74);
   --soft: rgba(248, 245, 241, 0.48);
   --accent: #7b1c1f;
   --accent-bright: #ff5353;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.46);
   --max: 1220px;
 }
 
@@ -32,8 +32,9 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at top, rgba(123, 28, 31, 0.2), transparent 22%),
-    linear-gradient(180deg, #060606 0%, #020202 100%);
+    radial-gradient(circle at 50% 0%, rgba(123, 28, 31, 0.2), transparent 24%),
+    radial-gradient(circle at 100% 20%, rgba(60, 76, 160, 0.08), transparent 26%),
+    linear-gradient(180deg, #080808 0%, #020202 100%);
 }
 
 img,
@@ -70,11 +71,11 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.1;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 100% 5px, 5px 100%;
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 4px, 4px 100%;
 }
 
 .site-shell::after {
@@ -83,17 +84,30 @@ button {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 0.2;
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
+      rgba(255, 255, 255, 0.08) 0px,
+      rgba(255, 255, 255, 0.08) 1px,
       transparent 1px,
-      transparent 4px
-    );
+      transparent 3px
+    ),
+    linear-gradient(90deg, rgba(255, 0, 80, 0.04), transparent 22%, transparent 78%, rgba(0, 180, 255, 0.04));
   mix-blend-mode: screen;
-  animation: crtDrift 9s linear infinite;
+  animation: crtDrift 9s linear infinite, crtFlicker 0.18s steps(2, end) infinite;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, transparent 58%, rgba(0, 0, 0, 0.34) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.03));
+  opacity: 0.85;
 }
 
 #site-intro {
@@ -184,8 +198,9 @@ button {
   align-items: center;
   gap: 1rem;
   padding: 1.15rem 1.4rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
-  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.18));
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .topbar-brand {
@@ -263,6 +278,25 @@ button {
   text-align: center;
 }
 
+.hero-chip-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero-chip {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
 .hero-logo-stage {
   position: relative;
   width: min(44vw, 320px);
@@ -307,6 +341,10 @@ button {
   line-height: 0.94;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  text-shadow:
+    -1px 0 rgba(255, 0, 90, 0.12),
+    1px 0 rgba(80, 180, 255, 0.12),
+    0 0 30px rgba(255, 255, 255, 0.05);
 }
 
 .hero-text,
@@ -315,6 +353,18 @@ button {
   margin: 1.15rem auto 0;
   color: var(--muted);
   font-size: clamp(1rem, 1.7vw, 1.12rem);
+}
+
+.hero-scene-note {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  color: var(--soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .button,
@@ -390,6 +440,32 @@ button {
 .section-shell {
   width: min(100%, var(--max));
   margin: 0 auto;
+  position: relative;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+    rgba(9, 9, 10, 0.7);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 24px 64px rgba(0, 0, 0, 0.42);
+  overflow: hidden;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 0, 90, 0.035), transparent 26%, transparent 74%, rgba(0, 180, 255, 0.035)),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 12px);
+  opacity: 0.45;
+}
+
+.section-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading {
@@ -438,8 +514,7 @@ button {
 
 .release-card,
 .info-card,
-.social-card,
-.shop-card {
+.social-card {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -459,14 +534,12 @@ button {
 
 .release-card div,
 .info-card,
-.social-card,
-.shop-card {
+.social-card {
   padding: 1rem;
 }
 
 .release-label,
-.social-card span,
-.shop-label {
+.social-card span {
   display: block;
   color: var(--soft);
   font-size: 0.72rem;
@@ -475,8 +548,7 @@ button {
 }
 
 .release-card h3,
-.info-card h3,
-.shop-card h3 {
+.info-card h3 {
   margin: 0.45rem 0 0;
   font-size: 1.08rem;
   text-transform: uppercase;
@@ -487,63 +559,6 @@ button {
 }
 
 .info-card p {
-  margin: 0.8rem 0 0;
-  color: var(--muted);
-}
-
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.shop-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.shop-card-media {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
-    #090909;
-}
-
-.shop-card-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.5) 100%);
-}
-
-.shop-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 220ms ease;
-}
-
-.shop-card:hover .shop-card-media img {
-  transform: scale(1.02);
-}
-
-.shop-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 38%);
-}
-
-.shop-card-body {
-  position: relative;
-  z-index: 1;
-}
-
-.shop-card p {
   margin: 0.8rem 0 0;
   color: var(--muted);
 }
@@ -749,6 +764,14 @@ button {
   100% { transform: translateY(18px); }
 }
 
+@keyframes crtFlicker {
+  0% { opacity: 0.16; }
+  25% { opacity: 0.23; }
+  50% { opacity: 0.18; }
+  75% { opacity: 0.26; }
+  100% { opacity: 0.17; }
+}
+
 @keyframes logoOrbit {
   0% {
     transform: rotateX(12deg) rotateY(0deg);
@@ -763,7 +786,6 @@ button {
 
 @media (max-width: 1100px) {
   .release-grid,
-  .shop-grid,
   .social-grid {
     grid-template-columns: 1fr;
   }
@@ -804,6 +826,11 @@ button {
 
   .button {
     width: 100%;
+  }
+
+  .hero-chip-row,
+  .hero-scene-note {
+    gap: 0.5rem;
   }
 
   .audio-player {
